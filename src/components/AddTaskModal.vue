@@ -1,4 +1,3 @@
-<!-- src/components/AddTaskModal.vue -->
 <template>
     <div v-show="props.show" class="fixed inset-0 flex items-center justify-center">
       <div class="bg-black opacity-50 fixed inset-0"></div>

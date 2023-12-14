@@ -16,18 +16,15 @@
           <label for="newTitle" class="block mb-2">Novo título:</label>
           <input v-model="newTitle" type="text" id="newTitle" class="w-full p-2 border rounded mb-4" />
           
-          <!-- Adicionando classe de flex aos botões -->
           <div class="flex">
             <button type="submit" class="flex-1 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Salvar</button>
             <button @click="closeModal" class="flex-1 ml-2 text-gray-600 hover:text-gray-800">Cancelar</button>
           </div>
         </form>
 
-        <!-- Confirmação para exclusão -->
         <div v-else>
           <p>Tem certeza que deseja excluir a tarefa?</p>
           
-          <!-- Adicionando classe de flex aos botões -->
           <div class="flex py-2">
             <button @click="confirmDelete" class="flex-1 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Confirmar</button>
             <button @click="closeModal" class="flex-1 ml-2 text-gray-600 hover:text-gray-800">Cancelar</button>
@@ -62,7 +59,6 @@ const editTask = () => {
 };
 
 const handleEdit = () => {
-  // Emitir um evento para notificar o componente pai sobre a edição da tarefa
   emits('edit-task', { taskId: props.task.id, newTitle: newTitle.value });
   closeModal();
 };
@@ -72,7 +68,6 @@ const deleteTask = () => {
 };
 
 const confirmDelete = () => {
-  // Emitir um evento para notificar o componente pai sobre a exclusão da tarefa
   emits('delete-task', props.task.id);
   closeModal();
 };
